@@ -1,0 +1,35 @@
+*** Nota:
+	- cURL o curl es un programa para Windows/Linux/Mac que se ejecuta en linea de comando y permite realizar peticiones HTTP
+
+
+Obtener Departamentos (o Continentes) (Ambito Peru)
+---------------------------------------------------
+curl 'https://resultadoselecciones2016.onpe.gob.pe/PRPCP2016/ajax.php' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' --data 'pid=2344185757341507&_clase=ubigeo&_accion=getDepartamentos&dep_id=&tipoElec=&tipoC=acta&modElec=&ambito=P&pantalla='
+
+Obtener Departamentos (o Continentes) (Ambito Extranjero)
+---------------------------------------------------------
+curl 'https://resultadoselecciones2016.onpe.gob.pe/PRPCP2016/ajax.php' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' --data 'pid=2344185757341507&_clase=ubigeo&_accion=getDepartamentos&dep_id=&tipoElec=&tipoC=acta&modElec=&ambito=E&pantalla='
+
+
+Obtener Provincias (o Pais) dado un Codigo de Departamento (o Continente)
+-------------------------------------------------------------------------
+curl 'https://resultadoselecciones2016.onpe.gob.pe/PRPCP2016/ajax.php' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' --data 'pid=7258424414635062&_clase=ubigeo&_accion=getProvincias&tipoC=acta&tipoElec=&modElec=&dep_id=020000'
+
+
+Obtener Distritos (o Ciudades) dado un Codigo de Provincia (o Pais)
+-------------------------------------------------------------------
+curl 'https://resultadoselecciones2016.onpe.gob.pe/PRPCP2016/ajax.php' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' --data 'pid=3214713747288308&_clase=ubigeo&_accion=getDistritos&tipoC=acta&prov_id=021600&tipoElec=&modElec='
+
+
+Obtener Locales de Votacion dado un Ubigeo (Ubigeo es Codigo de Distrito o Ciudad)
+----------------------------------------------------------------------------------
+curl 'https://resultadoselecciones2016.onpe.gob.pe/PRPCP2016/ajax.php' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' --data 'pid=3752478735718518.5&_clase=actas&_accion=getLocalesVotacion&tipoElec=&ubigeo=021604'
+
+
+Obtener Mesas de Votacion dado un Local de Votacion y Ubigeo
+------------------------------------------------------------
+curl 'https://resultadoselecciones2016.onpe.gob.pe/PRPCP2016/ajax.php' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' --data 'pid=8486680900003410&_clase=actas&_accion=displayActas&tipoElec=&ubigeo=140101&actasPor=4953&ubigeoLocal=140101&page=undefined'
+
+Obtener Resultados por Mesa
+---------------------------
+curl 'https://resultadoselecciones2016.onpe.gob.pe/PRPCP2016/ajax.php' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' --data 'pid=5687439786260744&_clase=mesas&_accion=displayMesas&ubigeo=140101&nroMesa=031187&tipoElec=10&page=1&pornumero=1'
